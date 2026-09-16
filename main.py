@@ -39,11 +39,11 @@ def get_account_type(counterparty_name):
     lao_plus   = ["NGUYEN VAN MINH", "NGUYEN MINH TIEN"]
     lao_1      = ["TRAN THI KA NHA", "CAI VAN THONG", "TRAN XUAN QUY"]
     if norm in lao_1_plus:
-        return "Lào 1 Plus"
+        return "Lào 01 Plus"
     if norm in lao_plus:
         return "Lào Plus"
     if norm in lao_1:
-        return "Lào 1"
+        return "Lào 01"
     return "Không xác định"
 
 
