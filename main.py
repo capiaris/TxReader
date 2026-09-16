@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-txreader.py  —  TXN Formatter (Web)
+txreader.py  —  TxReader (Web)
 Phiên bản web của desktop app, deploy được lên Render / Railway / Fly.io.
 
 Cài đặt:    pip install flask
@@ -173,7 +173,7 @@ HTML = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⚡ TXN Formatter</title>
+<title>⚡ TxReader</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
@@ -318,7 +318,7 @@ textarea[readonly] { cursor: default; }
 <body>
 <div class="container">
   <div class="header">
-    <h1>⚡ TXN FORMATTER</h1>
+    <h1>⚡ TxReader</h1>
     <span class="version">v 2.0 · web</span>
   </div>
   <div class="subtitle">// Chuyển đổi giao dịch ngân hàng (chuyển đi / nhận về)</div>
@@ -471,7 +471,7 @@ if __name__ == '__main__':
     debug = os.environ.get('FLASK_DEBUG', '0') == '1'
 
     print('=' * 54)
-    print('  ⚡ TXN FORMATTER  —  Web')
+    print('  ⚡ TxReader  —  Web')
     print(f'  Local:    http://localhost:{port}')
     print('  Deploy:   set PORT env, bind 0.0.0.0')
     print('  Health:   GET /api/health')
