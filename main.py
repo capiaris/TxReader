@@ -37,7 +37,7 @@ def get_account_type(counterparty_name):
     norm = normalize_name(counterparty_name)
     lao_1_plus = ["DINH NGOC DUC", "TRAN THI THUY", "TRINH VAN SON", "NGUYEN VAN LOI"]
     lao_plus   = ["NGUYEN VAN MINH", "NGUYEN MINH TIEN"]
-    lao_1      = ["TRAN THI KA NHA", "CAI VAN THONG", "TRAN XUAN QUY"]
+    lao_1      = ["CHAU THI KA NHA", "CAI VAN THONG", "TRAN XUAN QUY"]
     if norm in lao_1_plus:
         return "Lào 01 Plus"
     if norm in lao_plus:
