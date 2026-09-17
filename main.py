@@ -47,6 +47,17 @@ def get_account_type(counterparty_name):
     return "Không xác định"
 
 
+def parse_date(date_str):
+    """Parse và chuẩn hóa về dd/mm/yyyy. Trả về None nếu không hợp lệ."""
+    m = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', date_str)
+    if not m:
+        return None
+    d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if not (1 <= d <= 31 and 1 <= mo <= 12 and 1900 <= y <= 2100):
+        return None
+    return f"{d:02d}/{mo:02d}/{y:04d}"
+
+
 def detect_tx_type(anchor, fallback):
     """Xác định chiều giao dịch: incoming (nhận) / outgoing (chuyển)."""
     if not anchor:
@@ -81,7 +92,8 @@ def parse_transaction_line(line):
     sender_bank      = parts[2]
     date             = parts[3]
 
-    if not re.match(r'^\d{2}/\d{2}/\d{4}$', date):
+    date = parse_date(date)
+    if date is None:
         return None
 
     if sender_name_full.startswith('VND-TGTT-'):
